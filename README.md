@@ -1,1 +1,1 @@
-# HelloWorldWF
+# Szoftvertechnikák Windows Forms labor megoldása
