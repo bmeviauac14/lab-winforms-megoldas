@@ -512,18 +512,22 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // columnHeaderName
             // 
             this.columnHeaderName.Text = "Name";
+            this.columnHeaderName.Width = 200;
             // 
             // columnHeaderSize
             // 
             this.columnHeaderSize.Text = "Size";
+            this.columnHeaderSize.Width = 100;
             // 
             // columnHeaderModified
             // 
             this.columnHeaderModified.Text = "Modified";
+            this.columnHeaderModified.Width = 100;
             // 
             // MainForm
             // 

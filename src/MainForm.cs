@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace HelloWorldWF;
 
 public partial class MainForm : Form
@@ -80,5 +82,17 @@ public partial class MainForm : Form
         }
 
         tbDemoText.Text = parentDI.FullName;
+    }
+
+    private void listView1_DoubleClick(object sender, EventArgs e)
+    {
+        if (listView1.SelectedItems.Count != 1)
+            return;
+
+        var fullName = listView1.SelectedItems[0].SubItems[3].Text;
+        if (fullName != null)
+        {
+            Process.Start(new ProcessStartInfo(fullName) { UseShellExecute = true });
+        }
     }
 }
