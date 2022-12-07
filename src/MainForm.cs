@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace HelloWorldWF;
 
@@ -19,11 +20,17 @@ public partial class MainForm : Form
         Close();
     }
 
+    [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
+    private static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string? pszSubIdList);
+
     private void MainForm_Load(object sender, EventArgs e)
     {
         var root = treeView1.Nodes.Add("Local Disk (C:)");
         root.Tag = new DirectoryInfo(@"C:\");
         root.Nodes.Add("");
+
+        SetWindowTheme(treeView1.Handle, "explorer", null);
+        SetWindowTheme(listView1.Handle, "explorer", null);
     }
 
     private void treeView1_BeforeExpand(object sender, TreeViewCancelEventArgs e)
