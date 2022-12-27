@@ -31,6 +31,7 @@ public partial class MainForm : Form
 
         SetWindowTheme(treeView1.Handle, "explorer", null);
         SetWindowTheme(listView1.Handle, "explorer", null);
+        treeView1.ShowLines = false;
     }
 
     private void treeView1_BeforeExpand(object sender, TreeViewCancelEventArgs e)
@@ -83,7 +84,7 @@ public partial class MainForm : Form
         catch (UnauthorizedAccessException ex)
         {
             // lenyeljük a hibát, így úgy fog tûnni, mintha üres lenne a mappa
-            
+
             // Opcionálisan feldobhatunk egy üzenetet a felhasználónak
             // MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
