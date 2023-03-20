@@ -1,1 +1,1 @@
-# Szoftvertechnikák Windows Forms labor megoldása
+# Windows Forms labor megoldása
